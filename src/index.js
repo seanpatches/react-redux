@@ -1,8 +1,7 @@
-import React from 'react';
-import { render } from 'react-dom';
-import App from './components/App';
+import { createStore } from 'redux';
+import blogReducer from './reducers/blogReducer';
+import { ADD_POST } from './actions/postActions';
 
-render(
-  <App />,
-  document.getElementById('root')
-);
+const store = createStore(blogReducer);
+
+store.dispatch(ADD_POST('Sean', 'hello there'));
