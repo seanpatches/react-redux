@@ -24,7 +24,7 @@ export default function reducer(state = initialState, action){
       return { ...state, sandwichIngredients: null, drinks: null, chips: null };
 
     default:
-      state;
+      return state;
   }
 }
 
