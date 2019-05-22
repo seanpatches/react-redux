@@ -18,6 +18,11 @@ export const removeDrink = () => {
   return { type:REMOVE_DRINK, payload: null };
 };
 
+export const REMOVE_ALL = 'REMOVE_ALL';
+export const removeALL = () => {
+  return { type:REMOVE_ALL, payload: null };
+};
+
 export const REMOVE_CHIPS = 'REMOVE_CHIPS';
 export const removeChips = () => {
   return { type: REMOVE_CHIPS, payload: null };
