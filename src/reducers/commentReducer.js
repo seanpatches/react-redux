@@ -1,23 +1,33 @@
 import { ADD_COMMENT, REMOVE_COMMENT } from '../actions/commentActions';
+import { REMOVE_POST } from '../actions/postActions';
 
-const initialState = {
-  comments: []
+const deletePostComments = (state, id) => {
+  const newState = { ...state };
+  delete newState[id];
+  return newState;
 };
 
-export default function blogReducer(state = initialState, action) {
+export default function commentReducer(state = {}, action) {
   switch(action.type) {
     case ADD_COMMENT:
       return {
         ...state,
-        comments: [...(state.comments[action.payload.id] || []),
-          action.payload.comment] };
-
+        [action.payload.postId]: [
+          ...(state[action.payload.postId] || []),
+          action.payload.comment
+        ]
+      };
     case REMOVE_COMMENT:
       return {
         ...state,
-        comments: state.comments.filter(id => id == action.payload.id) };
-
+        [action.payload.postId]: [
+          ...state[action.payload.postId].slice(0, action.payload.commentId),
+          ...state[action.payload.postId].slice(action.payload.commentId + 1),
+        ]
+      };
+    case REMOVE_POST:
+      return deletePostComments(state, action.payload);
     default:
       return state;
   }
-} 
+}

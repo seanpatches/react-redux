@@ -1,14 +1,17 @@
 export const ADD_POST = 'ADD_POST';
-export const addPost = (title, body) => {
-  return { type: ADD_POST, payload: { title: title, body: body } };
-};
+export const addPost = (title, body) => ({
+  type: ADD_POST,
+  payload: { title, body }
+});
 
 export const REMOVE_POST = 'REMOVE_POST';
-export const removePost = title => {
-  return { type: REMOVE_POST, payload: title };
-};
+export const removePost = id => ({
+  type: REMOVE_POST,
+  payload: id
+});
 
 export const UPDATE_POST = 'UPDATE_POST';
-export const updaatePost = (title, update) => {
-  return { type: REMOVE_POST, payload: { title: title, update: update } };
-};
+export const updatePost = (id, body) => ({
+  type: UPDATE_POST,
+  payload: { id, body }
+});
