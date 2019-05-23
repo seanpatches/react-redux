@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getPosts } from '../selectors/postSelectors';
+import Post from './Post';
 
 function Post({ posts }) {
   const postsList = posts.map(post => {
