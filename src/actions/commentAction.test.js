@@ -1,17 +1,17 @@
 import { addComment, ADD_COMMENT, removeComment, REMOVE_COMMENT } from './commentActions';
 
 describe('comment actions', () => {
-  it('creates a create comment action', () => {
+  it('adds a add comment action', () => {
     expect(addComment(0, 'My Comment')).toEqual({
       type: ADD_COMMENT,
-      payload: { id: 0, comment: 'My Comment' }
+      payload: { postId: 0, comment: 'My Comment' }
     });
   });
 
-  it('creates a delete comment action', () => {
-    expect(removeComment(1)).toEqual({
+  it('adds a remove comment action', () => {
+    expect(removeComment(0, 1)).toEqual({
       type: REMOVE_COMMENT,
-      payload: 1
+      payload: { postId: 0, commentId: 1 }
     });
   });
 });
