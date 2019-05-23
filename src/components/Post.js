@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 function Post({ post }) {
   return (
     <>
-      <h1>{post.title}</h1>
+      <Link to={`/comments/${post.id}`}>
+        <p>{post.title}</p>
+      </Link>
     </>
   );
 }

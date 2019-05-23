@@ -4,6 +4,7 @@ import Post from './Post';
 
 function Posts({ posts }) {
   const postsList = posts.map(post => {
+    console.log(post);
     return (
       <li key={post.id}>
         <Post post={post}/>

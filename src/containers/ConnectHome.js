@@ -1,6 +1,11 @@
 import { connect } from 'react-redux';
+import { getPosts } from '../selectors/postSelectors';
 import { addPost } from '../actions/postActions';
-import PostForm from '../components/PostForm';
+import Home from '../components/Home.js';
+
+const mapStateToProps = state => ({
+  posts: getPosts(state)
+});
 
 const mapDispatchToProps = dispatch => ({
   onSubmit(title, body){
@@ -9,6 +14,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
-)(PostForm);
+)(Home);
