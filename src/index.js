@@ -14,7 +14,6 @@ store.dispatch({
     body: 'Hi'
   }
 });
-// console.log(store.getState())
 
 store.dispatch({
   type: 'UPDATE_POST',
@@ -30,3 +29,20 @@ store.dispatch({
     title: 'Sean'
   }
 });
+
+store.dispatch({
+  type: 'ADD_COMMENT',
+  payload:{
+    id: '1',
+    comment: 'boo'
+  }
+});
+
+store.dispatch({
+  type: 'REMOVE_COMMENT',
+  payload:{
+    id: '1'
+  }
+});
+
+
