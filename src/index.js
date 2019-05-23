@@ -1,7 +1,11 @@
 import { createStore } from 'redux';
-import blogReducer from './reducers/blogReducer';
+import postReducer from './reducers/postReducer';
 
-const store = createStore(blogReducer);
+const store = createStore(postReducer);
+
+store.subscribe(() => {
+  console.log(store.getState());
+});
 
 store.dispatch({
   type: 'ADD_POST',
@@ -10,8 +14,15 @@ store.dispatch({
     body: 'Hi'
   }
 });
+// console.log(store.getState())
 
-console.log(store.getState());
+store.dispatch({
+  type: 'UPDATE_POST',
+  payload:{
+    title: 'Sean',
+    update: 'updated'
+  }
+});
 
 store.dispatch({
   type: 'REMOVE_POST',
@@ -19,4 +30,3 @@ store.dispatch({
     title: 'Sean'
   }
 });
-console.log(store.getState());
