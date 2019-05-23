@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
-import postReducer from './reducers/postReducer';
+import reducer from './reducers/index.js';
 
-const store = createStore(postReducer);
+const store = createStore(reducer);
 
 store.subscribe(() => {
   console.log(store.getState());
