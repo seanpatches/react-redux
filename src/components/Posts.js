@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Post from './Post';
 
-function Post({ posts }) {
+function Posts({ posts }) {
   const postsList = posts.map(post => {
     return (
       <li key={post.id}>
@@ -18,6 +18,8 @@ function Post({ posts }) {
   );
 }
 
-Post.propTypes = {
+Posts.propTypes = {
   posts: PropTypes.array.isRequired
 };
+
+export default Posts;
