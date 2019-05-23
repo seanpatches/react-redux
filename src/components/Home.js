@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PostForm from './PostForm';
-import Posts from './Posts';
+import PostForm from './posts/PostForm';
+import Posts from './posts/Posts';
 
 export default function Home({ onSubmit, posts }){
   return (

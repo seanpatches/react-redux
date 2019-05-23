@@ -9,8 +9,10 @@ export default function App(){
   return (
   <>
     <Router>
-      <Route path="/" component={ConnectPosts} />
-      {/* <Route path="/details" component={CreatePost} /> */}
+      <Switch>
+        <Route path="/" component={ConnectPosts} />
+        {/* <Route path="/comments/:{} component={CreatePost} /> */}
+      </Switch>
     </Router>
   </>
   );
