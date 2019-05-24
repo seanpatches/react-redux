@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CreateComment from '../../containers/CreateComment';
+import AllComments from '../../containers/AllComments';
 
 function PostDetails({ post }) {
   return (
@@ -8,6 +9,7 @@ function PostDetails({ post }) {
     <h1>{post.title}</h1>
     <p>{post.body}</p>
     <CreateComment postId={post.id}/>
+    <AllComments postId={post.id} />
     </>
   );
 }

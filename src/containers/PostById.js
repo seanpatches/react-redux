@@ -7,5 +7,6 @@ const mapStateToProps = (state, props) => ({
 });
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  null
 )(PostDetails);
