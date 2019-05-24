@@ -5,13 +5,14 @@ import {
   Switch
 } from 'react-router-dom';
 import ConnectPosts from '../containers/ConnectHome';
+import PostDetails from './posts/PostDetails';
 export default function App(){
   return (
   <>
     <Router>
       <Switch>
-        <Route path="/" component={ConnectPosts} />
-        {/* <Route path="/comments/:{} component={CreatePost} /> */}
+        <Route exact path="/" component={ConnectPosts} />
+        <Route path="/comments/:postId" component={PostDetails} />
       </Switch>
     </Router>
   </>

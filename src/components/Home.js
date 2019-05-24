@@ -15,4 +15,4 @@ export default function Home({ onSubmit, posts }){
 Home.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   posts: PropTypes.array.isRequired
-}
+};
